@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protein Intake Model</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Protein Intake Model</h1>
+    <form id="predict-form">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" required>
+        <label for="activity">Activity Level:</label>
+        <input type="text" id="activity" name="activity" required>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+        </select>
+        <button type="submit">Calculate</button>
+    </form>
+    <h1>{{protein_intake}}</h1>
+    <div id="result"></div>
+</body>
+</html>
