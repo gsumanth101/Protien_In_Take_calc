@@ -49,8 +49,10 @@ def predict():
     activity = data['activity']
     age = data['age']
     gender = data['gender']
+    
     protein_intake = calculate_protein_intake(weight, activity, age, gender)
-    return redirect(url_for('model', protein_intake=protein_intake))
+    
+    return jsonify({'protein_intake': protein_intake})
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
